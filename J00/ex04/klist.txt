@@ -1,0 +1,6 @@
+Credentials cache: API:E86B6E24-EC79-42BF-9667-F0095373B86A
+        Principal: sgury@42.FR
+
+  Issued                Expires               Principal
+Feb  5 13:56:17 2019  Feb 12 13:56:17 2019  krbtgt/42.FR@42.FR
+Feb  5 14:03:26 2019  Feb 12 13:56:17 2019  host/vgs-fn1.42.fr@42.FR
