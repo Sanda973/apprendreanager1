@@ -1,29 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_display.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/26 18:00:44 by sgury             #+#    #+#             */
-/*   Updated: 2019/02/27 17:27:15 by sgury            ###   ########.fr       */
+/*   Created: 2019/02/27 19:56:11 by sgury             #+#    #+#             */
+/*   Updated: 2019/02/27 20:48:05 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "usefull.h"
 
-int	*ft_map(int *tab, int length, int (*f)(int))
+void	ft_putchar(char c)
 {
-	int	i;
-	int	*ret;
+	write(1, &c, 1);
+}
 
-	i = 0;
-	if ((ret = (int *)malloc(sizeof(int*) * (length))) == NULL)
-		return (NULL);
-	while (i < length)
+void	ft_putstr(char *str)
+{
+	while (*str != '\0')
 	{
-		ret[i] = f(tab[i]);
-		i++;
+		ft_putchar(*str);
+		str++;
 	}
-	return (ret);
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		if (nb == -2147483648)
+		{
+			nb = -147483648;
+			ft_putchar('2');
+		}
+		nb = nb * -1;
+	}
+	if (nb <= 9)
+		ft_putchar(nb + '0');
+	if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putchar(nb % 10 + '0');
+	}
 }

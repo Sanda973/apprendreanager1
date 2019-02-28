@@ -6,11 +6,16 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 13:24:21 by sgury             #+#    #+#             */
-/*   Updated: 2019/02/14 14:40:00 by sgury            ###   ########.fr       */
+/*   Updated: 2019/02/18 18:27:57 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 int		main(int argc, char *argv[])
 {

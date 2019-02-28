@@ -6,14 +6,14 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 19:26:12 by sgury             #+#    #+#             */
-/*   Updated: 2019/02/24 19:35:56 by sgury            ###   ########.fr       */
+/*   Updated: 2019/02/26 10:12:59 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_POINT_H
-#define FT_POINT_H
+# define FT_POINT_H
 
-typedef struct s_point
+typedef struct	s_point
 {
 	int	x;
 	int	y;

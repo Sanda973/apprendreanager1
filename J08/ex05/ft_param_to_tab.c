@@ -6,44 +6,44 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/25 09:41:40 by sgury             #+#    #+#             */
-/*   Updated: 2019/02/25 16:32:08 by sgury            ###   ########.fr       */
+/*   Updated: 2019/02/26 10:21:17 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_par.h"
 
-int		ft_strlen(char *str)
+int					ft_strlen(char *str)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (str[i] != '\0')
 		i++;
-	return(i);
+	return (i);
 }
 
-char	*ft_strdup(char *src)
+char				*ft_strdup(char *src)
 {
-	int	i;
+	int		i;
 	char	*cpy;
 
 	i = 0;
 	if ((cpy = (char*)malloc(sizeof(char *) * (ft_strlen(src)) + 1)) == NULL)
 		return (NULL);
-	while(src[i] != '\0')
+	while (src[i] != '\0')
 	{
 		cpy[i] = src[i];
 		i++;
 	}
 	if (src[i] == '\0')
-			cpy[i] = src[i];
+		cpy[i] = src[i];
 	return (cpy);
 }
 
-struct	s_stock_par *ft_param_to_tab(int ac, char **av)
+struct s_stock_par	*ft_param_to_tab(int ac, char **av)
 {
 	t_stock_par	*a;
-	int	i;
+	int			i;
 
 	i = 0;
 	if ((a = malloc(sizeof(t_stock_par) * (ac) + 1)) == NULL)

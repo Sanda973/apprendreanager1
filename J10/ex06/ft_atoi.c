@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/26 18:00:44 by sgury             #+#    #+#             */
-/*   Updated: 2019/02/27 17:27:15 by sgury            ###   ########.fr       */
+/*   Created: 2019/02/27 20:05:04 by sgury             #+#    #+#             */
+/*   Updated: 2019/02/27 20:47:45 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "usefull.h"
 
-int	*ft_map(int *tab, int length, int (*f)(int))
+int	ft_atoi(char *str)
 {
-	int	i;
-	int	*ret;
+	int	neg;
+	int	nb;
 
-	i = 0;
-	if ((ret = (int *)malloc(sizeof(int*) * (length))) == NULL)
-		return (NULL);
-	while (i < length)
+	neg = 1;
+	nb = 0;
+	while (*str <= 32)
+		str++;
+	if (*str == '-')
+		neg = -1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
 	{
-		ret[i] = f(tab[i]);
-		i++;
+		nb = nb * 10 + *str - '0';
+		str++;
 	}
-	return (ret);
+	return (nb * neg);
 }

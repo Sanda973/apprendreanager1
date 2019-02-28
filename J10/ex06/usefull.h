@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   usefull.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/25 11:45:12 by sgury             #+#    #+#             */
-/*   Updated: 2019/02/25 11:52:01 by sgury            ###   ########.fr       */
+/*   Created: 2019/02/27 11:39:38 by sgury             #+#    #+#             */
+/*   Updated: 2019/02/27 12:55:02 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stock_par.h"
+#ifndef USEFULL_H
+# define USEFULL_H
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+# include <unistd.h>
+
+int		ft_atoi(char *str);
+void	ft_putchar(char c);
+void	ft_putnbr(int nb);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+
+#endif

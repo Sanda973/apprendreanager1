@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/26 19:01:50 by sgury             #+#    #+#             */
-/*   Updated: 2019/02/26 19:37:08 by sgury            ###   ########.fr       */
+/*   Created: 2019/02/27 20:17:07 by sgury             #+#    #+#             */
+/*   Updated: 2019/02/27 20:27:35 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_is_sort(int *tab, int length, int (*f)(int, int));
+#include "usefull.h"
 
-int ft_ultimate_range(int min, int max)
+int	ft_strlen(char *str)
 {
-	return (min - max);
-}
+	int count;
 
-int	main()
-{
-	int tab[] = {8, 5, 3, -45};
-
-	return (ft_is_sort(tab, 4, &ft_ultimate_range));
+	count = 0;
+	while (str[count] != '\0')
+		count++;
+	return (count);
 }
